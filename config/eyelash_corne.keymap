@@ -1,0 +1,13 @@
+#define CONFIG_WIRELESS
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, LS0, LS13, LS4, sensors)                   \
+    ZMK_LAYER(                                                                 \
+        name,                                                                  \
+                 LT     LS0     RT                  \
+                 LM     LS13    RM                  \
+                 LB     LS4     RB                  \
+                 LH             RH                  \
+    ,sensors)
+
+#include "zmk-helpers/key-labels/eyelash42.h"
+#include "base.keymap"
+/{ chosen { zmk,physical-layout = &default_layout; }; };

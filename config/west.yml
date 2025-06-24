@@ -13,6 +13,21 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: main
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+    - name: zmk-leader-key
+      remote: urob
+      revision: main
+    - name: zmk-tri-state
+      remote: urob
+      revision: main
     # oled Adapter
     - name: zmk-new_corne
       remote: eyelash_corne

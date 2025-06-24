@@ -1,0 +1,19 @@
+// Settings tuned for 3840 x 2160 display resolution
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600 // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
+
+#include <dt-bindings/zmk/rgb.h>
+
+
+#define CRGB_ON &rgb_ug RGB_ON
+#define CRGB_OFF &rgb_ug RGB_OFF
+#define CRGB_HUI &rgb_ug RGB_HUI
+#define CRGB_HUD &rgb_ug RGB_HUD
+#define CRGB_SAI &rgb_ug RGB_SAI
+#define CRGB_SAD &rgb_ug RGB_SAD
+#define CRGB_BRI &rgb_ug RGB_BRI
+#define CRGB_BRD &rgb_ug RGB_BRD
+#define CRGB_SPI &rgb_ug RGB_SPI
+#define CRGB_SPD &rgb_ug RGB_SPD
+#define CRGB_EFF &rgb_ug RGB_EFF
+#define CRGB_EFR &rgb_ug RGB_EFR
