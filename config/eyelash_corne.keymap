@@ -10,4 +10,3 @@
 
 #include "zmk-helpers/key-labels/eyelash42.h"
 #include "base.keymap"
-/{ chosen { zmk,physical-layout = &default_layout; }; };
