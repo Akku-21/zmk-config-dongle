@@ -58,6 +58,13 @@
         triggers-per-rotation = <15>;
         sensors = <&left_encoder>;
     };
+
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        pwm_led_0 {
+            pwms = <&pwm0 0 PWM_MSEC(1) PWM_POLARITY_NORMAL>;
+        };
+    };
 };
 
 // vim: filetype=dts fdm=marker:
