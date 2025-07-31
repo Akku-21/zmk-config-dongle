@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: m165437 #new entry
       url-base: https://github.com/M165437 #new entry
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
+    - name: prospector
+      url-base: https://github.com/ilyasshafigin
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -38,7 +38,7 @@ manifest:
       remote: m165437
       revision: main
     - name: prospector-zmk-module
-      remote: carrefinho
+      remote: prospector
       revision: main
     - name: zephyr
       remote: urob
