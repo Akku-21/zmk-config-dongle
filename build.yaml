@@ -63,7 +63,7 @@ include:
     shield: nice_view_gem
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
-    shield: corne_dongle_xiao prospector_adapter
+    shield: corne_dongle_xiao
     #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle\"
     artifact-name: xiao_corne_dongle
