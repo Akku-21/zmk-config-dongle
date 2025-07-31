@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: akku21
       url-base: https://github.com/akku-21
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -34,6 +36,9 @@ manifest:
       revision: main
     - name: nice-view-gem
       remote: akku21
+      revision: main
+    - name: prospector-zmk-module
+      remote: carrefinho
       revision: main
     - name: zephyr
       remote: urob
