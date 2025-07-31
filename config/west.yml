@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/a741725193
     - name: urob
       url-base: https://github.com/urob
-    - name: akku21
-      url-base: https://github.com/akku-21
+    - name: m165437 #new entry
+      url-base: https://github.com/M165437 #new entry
     - name: carrefinho
       url-base: https://github.com/carrefinho
   projects:
@@ -35,11 +35,11 @@ manifest:
       remote: eyelash_corne
       revision: main
     - name: nice-view-gem
-      remote: akku21
+      remote: m165437
       revision: main
-    - name: prospector-zmk-module
-      remote: carrefinho
-      revision: main
+    # - name: prospector-zmk-module
+    #   remote: carrefinho
+    #   revision: main
     - name: zephyr
       remote: urob
       revision: v3.5.0+zmk-fixes
