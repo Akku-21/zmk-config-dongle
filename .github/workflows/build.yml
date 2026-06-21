@@ -96,6 +96,8 @@ jobs:
         run: |
           sed -i 's/FATAL_ERROR/WARNING/g; s/COMMAND_ERROR_IS_FATAL ANY//g' zephyr/cmake/modules/kconfig.cmake
           sed -i 's/err("Aborting due to Kconfig warnings")/print("WARNING: Kconfig warnings detected (non-fatal)")/' zephyr/scripts/kconfig/kconfig.py
+          grep -rn "FATAL_ERROR" zephyr/cmake/modules/kconfig.cmake | head -3 || echo "No FATAL_ERROR remaining in kconfig.cmake"
+          grep -rn "Aborting\|FATAL" zephyr/cmake/modules/ 2>/dev/null | grep -i kconfig | head -5 || true
           echo "Patched kconfig.cmake and kconfig.py"
 
       - name: West Build (${{ env.display_name }})
