@@ -56,12 +56,12 @@ include:
   ### CORNE START ###
   ### nice_view START ###
   # nice_nano_v2 + nice_epaper
-  - board: eyelash_corne_left
-    shield: nice_view_gem
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_USB=n
-  - board: eyelash_corne_right
-    shield: nice_view_gem
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_USB=n
+  - board: nice_nano//zmk
+    shield: eyelash_corne_left nice_view_gem
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: nice_nano//zmk
+    shield: eyelash_corne_right nice_view_gem
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: xiao_ble//zmk
     shield: corne_dongle_xiao prospector_adapter
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Xiao_Dongle\" -DCONFIG_ZMK_RGB_UNDERGLOW=n -DCONFIG_ZMK_BACKLIGHT=n
