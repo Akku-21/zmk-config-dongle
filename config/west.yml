@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: eyelash_corne
-      url-base: https://github.com/Akku-21
+      url-base: https://github.com/a741725193
     - name: urob
       url-base: https://github.com/urob
     - name: m165437
