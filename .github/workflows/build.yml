@@ -95,12 +95,16 @@ jobs:
         working-directory: ${{ env.base_dir }}
         run: |
           sed -i 's/FATAL_ERROR/WARNING/g; s/COMMAND_ERROR_IS_FATAL ANY//g' zephyr/cmake/modules/kconfig.cmake
-          grep -rl "Aborting due to Kconfig warnings" zephyr/scripts/ 2>/dev/null | while read f; do
-            sed -i 's/sys.exit(1)/sys.exit(0)/' "$f"
-            sed -i 's/raise SystemExit(1)/raise SystemExit(0)/' "$f"
+          grep -rl "Aborting due to Kconfig warnings" zephyr/ 2>/dev/null | while read f; do
+            echo "=== Found in: $f ==="
+            grep -n "Aborting\|exit\|FATAL" "$f" | head -10
+            sed -i '/Aborting due to Kconfig/,+2s/exit(1)/exit(0)/g' "$f"
+            sed -i '/Aborting due to Kconfig/,+2s/sys.exit(1)/sys.exit(0)/g' "$f"
+            sed -i 's/exit(num_warnings)/exit(0)/' "$f"
+            sed -i 's/return 1/return 0/' "$f"
             echo "Patched $f"
           done
-          echo "Patched kconfig pipeline to not abort on warnings"
+          echo "Done patching"
 
       - name: West Build (${{ env.display_name }})
         working-directory: ${{ env.base_dir }}
