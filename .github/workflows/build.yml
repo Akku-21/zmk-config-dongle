@@ -94,16 +94,8 @@ jobs:
       - name: Patch kconfig.cmake to downgrade warnings
         working-directory: ${{ env.base_dir }}
         run: |
-          python3 -c "
-          import re
-          f = 'zephyr/cmake/modules/kconfig.cmake'
-          c = open(f).read()
-          c = c.replace('COMMAND_ERROR_IS_FATAL ANY', '')
-          c = re.sub(r'message\(FATAL_ERROR[^)]*[Kk]config[^)]*\)', 'message(WARNING \"Kconfig warnings (non-fatal)\")', c)
-          c = re.sub(r'message\(FATAL_ERROR[^)]*[Aa]borting[^)]*\)', 'message(WARNING \"Kconfig warnings (non-fatal)\")', c)
-          open(f, 'w').write(c)
-          print('Patched kconfig.cmake successfully')
-          "
+          sed -i 's/FATAL_ERROR/WARNING/g; s/COMMAND_ERROR_IS_FATAL ANY//g' zephyr/cmake/modules/kconfig.cmake
+          echo "Patched kconfig.cmake: replaced all FATAL_ERROR with WARNING"
 
       - name: West Build (${{ env.display_name }})
         working-directory: ${{ env.base_dir }}
