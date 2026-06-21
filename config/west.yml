@@ -3,17 +3,17 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: eyelash_corne
-      url-base: https://github.com/Akku-21
+      url-base: https://github.com/a741725193
     - name: urob
       url-base: https://github.com/urob
-    - name: m165437 #new entry
-      url-base: https://github.com/M165437 #new entry
+    - name: m165437
+      url-base: https://github.com/M165437
     - name: prospector
       url-base: https://github.com/ilyasshafigin
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3-branch
       import: app/west.yml
     - name: zmk-adaptive-key
       remote: urob
@@ -30,7 +30,6 @@ manifest:
     - name: zmk-tri-state
       remote: urob
       revision: main
-    # oled Adapter
     - name: zmk-new_corne
       remote: eyelash_corne
       revision: main
@@ -39,7 +38,7 @@ manifest:
       revision: main
     - name: prospector-zmk-module
       remote: prospector
-      revision: main
+      revision: v0.3-branch
 
   self:
     path: config
