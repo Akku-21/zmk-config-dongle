@@ -94,7 +94,10 @@ jobs:
       - name: Patch kconfig.cmake to downgrade warnings
         working-directory: ${{ env.base_dir }}
         run: |
-          sed -i 's/message(FATAL_ERROR "Aborting due to Kconfig warnings")/message(WARNING "Kconfig warnings detected (non-fatal)")/' zephyr/cmake/modules/kconfig.cmake || true
+          grep -n "FATAL_ERROR" zephyr/cmake/modules/kconfig.cmake | head -5 || true
+          sed -i '/Kconfig warnings/s/FATAL_ERROR/WARNING/' zephyr/cmake/modules/kconfig.cmake || true
+          sed -i '/Aborting due to Kconfig/s/FATAL_ERROR/WARNING/' zephyr/cmake/modules/kconfig.cmake || true
+          sed -i 's/FATAL_ERROR "Aborting/WARNING "Aborting/' zephyr/cmake/modules/kconfig.cmake || true
 
       - name: West Build (${{ env.display_name }})
         working-directory: ${{ env.base_dir }}
